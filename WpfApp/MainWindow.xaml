@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="String Utils" Height="256" Width="512">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label>Text</Label>
+        <TextBox Grid.Row="1" Name="textInput" AcceptsReturn="True" Margin="4"></TextBox>
+        <WrapPanel Grid.Column="1">
+            <Button Margin="4"
+                    Click="ButtonMinutesToRead">
+                Minutes to read
+            </Button>
+            <Button Margin="4">
+                Other function
+            </Button>
+            <Button Margin="4">
+                Other function
+            </Button>
+            <Button Margin="4">
+                Other function
+            </Button>
+        </WrapPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Margin="4">Answer:</Label>
+            <TextBlock Name="tbResult" Margin="4"></TextBlock>
+        </StackPanel>
+
 
     </Grid>
 </Window>
