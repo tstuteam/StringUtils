@@ -31,34 +31,36 @@ public static class StringUtils
     /// <returns></returns>
     public static double Readability(string input)
     {
-        return 0.0588 * ((Letters(input) / Words(input)) * 100) -
-            0.296 * ((Sentences(input) / Words(input)) * 100) - 15.8;
+        double wordsPer100 = Words(input) / 100.0;
+        double L = Letters(input) / wordsPer100;
+        double S = Sentences(input) / wordsPer100;
+        return Math.Round(0.0588 * L - 0.296 * S - 15.8);
     }
 
     public static int Letters(string input)
     {
-        int result = 0;
+        int letters = 0;
         foreach (char c in input)
         {
             if (char.IsLetter(c))
             {
-                result++;
+                letters++;
             }
         }
-        return result;
+        return letters;
     }
 
     public static int Sentences(string input)
     {
-        int result = 0;
+        int sentences = 0;
         foreach (char c in input)
         {
             if (c == '.' || c == '?' || c == '!')
             {
-                result++;
+                sentences++;
             }
         }
-        return result;
+        return sentences;
     }
 
     /// <summary>
@@ -68,6 +70,8 @@ public static class StringUtils
     /// <returns></returns>
     public static int Words(string input)
     {
-        return input.Split(' ').Length;
+        char[] delimiters = new char[] { ' ', '\r', '\n' };
+        int words = input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length;
+        return words;
     }
 }

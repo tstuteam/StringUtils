@@ -16,5 +16,10 @@ namespace WpfApp
         {
             tbResult.Text = StringUtils.StringUtils.MinutesToRead(textInput.Text, 200).ToString();
         }
+
+        private void ButtonReadability(object sender, RoutedEventArgs e)
+        {
+            tbResult.Text = StringUtils.StringUtils.Readability(textInput.Text).ToString();
+        }
     }
 }

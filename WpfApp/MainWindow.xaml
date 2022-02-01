@@ -18,14 +18,15 @@
         </Grid.ColumnDefinitions>
 
         <Label>Text</Label>
-        <TextBox Grid.Row="1" Name="textInput" AcceptsReturn="True" Margin="4"></TextBox>
+        <TextBox Grid.Row="1" Name="textInput" AcceptsReturn="True" TextWrapping="Wrap" Margin="4"></TextBox>
         <WrapPanel Grid.Column="1">
             <Button Margin="4"
                     Click="ButtonMinutesToRead">
                 Minutes to read
             </Button>
-            <Button Margin="4">
-                Other function
+            <Button Margin="4"
+                    Click="ButtonReadability">
+                Readability
             </Button>
             <Button Margin="4">
                 Other function
