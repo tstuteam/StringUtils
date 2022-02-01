@@ -39,7 +39,5 @@
             <Label Margin="4">Answer:</Label>
             <TextBlock Name="tbResult" Margin="4"></TextBlock>
         </StackPanel>
-
-
     </Grid>
 </Window>
