@@ -8,13 +8,13 @@
         Title="String Utils" Height="256" Width="512">
     <Grid Margin="8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <Label>Text</Label>
@@ -30,11 +30,11 @@
         <StackPanel Grid.Column="1">
             <WrapPanel>
                 <Button Margin="4"
-                    Click="ButtonMinutesToRead">
+                        Click="ButtonMinutesToRead">
                     Minutes to read
                 </Button>
                 <Button Margin="4"
-                    Click="ButtonReadability">
+                        Click="ButtonReadability">
                     Readability
                 </Button>
             </WrapPanel>

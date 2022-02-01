@@ -25,10 +25,10 @@ public static class StringUtils
     /// <returns></returns>
     public static double Readability(string input)
     {
-        double wordsPer100 = Words(input) / 100.0;
-        double L = Letters(input) / wordsPer100;
-        double S = Sentences(input) / wordsPer100;
-        return Math.Round(0.0588 * L - 0.296 * S - 15.8);
+        var wordsPer100 = Words(input) / 100.0;
+        var letters = Letters(input) / wordsPer100;
+        var sentences = Sentences(input) / wordsPer100;
+        return Math.Round(0.0588 * letters - 0.296 * sentences - 15.8);
     }
 
     /// <summary>
@@ -38,15 +38,7 @@ public static class StringUtils
     /// <returns></returns>
     public static int Letters(string input)
     {
-        int letters = 0;
-        foreach (char c in input)
-        {
-            if (char.IsLetter(c))
-            {
-                letters++;
-            }
-        }
-        return letters;
+        return input.Count(char.IsLetter);
     }
 
     /// <summary>
@@ -56,9 +48,9 @@ public static class StringUtils
     /// <returns></returns>
     public static int Sentences(string input)
     {
-        // TODO: бывают сокращения, в которых используется точка. Например: Mr. Mrs. P.S. и так дале...
-        char[] delimiters = { '.', '?', '!' };
-        int sentences = Split(input, delimiters).Length;
+        // TODO: бывают сокращения, в которых используется точка. Например: Mr. Mrs. P.S. и так далее...
+        char[] delimiters = {'.', '?', '!'};
+        var sentences = Split(input, delimiters).Length;
         return sentences;
     }
 
@@ -69,8 +61,8 @@ public static class StringUtils
     /// <returns></returns>
     public static int Words(string input)
     {
-        char[] delimiters = new char[] { ' ', '\r', '\n' };
-        int words = Split(input, delimiters).Length;
+        char[] delimiters = {' ', '\r', '\n'};
+        var words = Split(input, delimiters).Length;
         return words;
     }
 
