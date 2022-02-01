@@ -18,23 +18,41 @@
         </Grid.ColumnDefinitions>
 
         <Label>Text</Label>
-        <TextBox Grid.Row="1" Name="textInput" AcceptsReturn="True" TextWrapping="Wrap" Margin="4"></TextBox>
-        <WrapPanel Grid.Column="1">
-            <Button Margin="4"
+
+        <TextBox Grid.Row="1"
+                 Name="textInput"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 Margin="4">
+        </TextBox>
+
+        <StackPanel Grid.Column="1">
+            <WrapPanel>
+                <Button Margin="4"
                     Click="ButtonMinutesToRead">
-                Minutes to read
-            </Button>
-            <Button Margin="4"
+                    Minutes to read
+                </Button>
+                <Button Margin="4"
                     Click="ButtonReadability">
-                Readability
-            </Button>
-            <Button Margin="4">
-                Other function
-            </Button>
-            <Button Margin="4">
-                Other function
-            </Button>
-        </WrapPanel>
+                    Readability
+                </Button>
+            </WrapPanel>
+            <WrapPanel>
+                <Button Margin="4"
+                        Click="ButtonWords">
+                    Words
+                </Button>
+                <Button Margin="4"
+                        Click="ButtonLetters">
+                    Letters
+                </Button>
+                <Button Margin="4"
+                        Click="ButtonSentences">
+                    Sentences
+                </Button>
+            </WrapPanel>
+        </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Label Margin="4">Answer:</Label>

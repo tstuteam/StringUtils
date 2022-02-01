@@ -21,5 +21,20 @@ namespace WpfApp
         {
             tbResult.Text = StringUtils.StringUtils.Readability(textInput.Text).ToString();
         }
+
+        private void ButtonWords(object sender, RoutedEventArgs e)
+        {
+            tbResult.Text = StringUtils.StringUtils.Words(textInput.Text).ToString();
+        }
+
+        private void ButtonLetters(object sender, RoutedEventArgs e)
+        {
+            tbResult.Text = StringUtils.StringUtils.Letters(textInput.Text).ToString();
+        }
+
+        private void ButtonSentences(object sender, RoutedEventArgs e)
+        {
+            tbResult.Text = StringUtils.StringUtils.Sentences(textInput.Text).ToString();
+        }
     }
 }
