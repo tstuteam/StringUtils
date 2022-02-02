@@ -48,10 +48,9 @@ public static class StringUtils
     /// <returns></returns>
     public static int Sentences(string input)
     {
-        // TODO: бывают сокращения, в которых используется точка. Например: Mr. Mrs. P.S. и так далее...
-        char[] delimiters = {'.', '?', '!'};
-        var sentences = Split(input, delimiters).Length;
-        return sentences;
+        // TODO: бывают сокращения, в которых используется точка.
+        // Например: Mr. Mrs. P.S. и так далее...
+        return Count(input, new char[] { '.', '?', '!' });
     }
 
     /// <summary>
@@ -61,9 +60,12 @@ public static class StringUtils
     /// <returns></returns>
     public static int Words(string input)
     {
-        char[] delimiters = {' ', '\r', '\n'};
-        var words = Split(input, delimiters).Length;
-        return words;
+        return Count(input, new char[] { ' ', '\r', '\n' });
+    }
+
+    private static int Count(string input, char[] delimiters)
+    {
+        return Split(input, delimiters).Length;
     }
 
     private static string[] Split(string input, char[] delimiters)
